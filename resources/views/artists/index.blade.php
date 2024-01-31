@@ -11,6 +11,7 @@
             <li>
                 <h3>{{ $artist->name }}</h3>
                 <p>{{ $artist->description }} </p>
+                <img src="{{ $artist->image }}">
             </li>
         @endforeach
     </ul>
