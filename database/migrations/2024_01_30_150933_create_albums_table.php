@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->foreignIdFor(Artist::class);
-            $table->foreignIdFor(Genre::class);
+            $table->text('description');
+            $table->string('image');
+            $table->foreignId('artist_id')->constrained('artists')->onDelete('cascade');
+            $table->foreignId('genre_id')->constrained('genres');
             $table->timestamps();
         });
     }

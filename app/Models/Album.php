@@ -14,4 +14,14 @@ class Album extends Model
         'description',
         'image'
     ];
+
+    public function artist()
+    {
+        return $this->belongsTo(Artist::class);
+    }
+
+    public function genre()
+    {
+        return $this->hasMany(Genre::class);
+    }
 }
