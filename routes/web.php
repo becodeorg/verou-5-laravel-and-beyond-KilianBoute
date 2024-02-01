@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
-
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +25,6 @@ Route::get('/artists/{id}', [ArtistController::class, 'show'])->name('artists-sh
 
 Route::get('/albums', [AlbumController::class, 'index'])->name('albums-index');
 Route::get('/albums/{id}', [AlbumController::class, 'show'])->name('albums-show');
+
+Route::get('/register', [RegisterController::class, 'create'])->name('register-create');
+Route::post('/register', [RegisterController::class, 'store'])->name('register-store');
