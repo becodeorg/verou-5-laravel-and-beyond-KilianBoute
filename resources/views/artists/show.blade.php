@@ -10,7 +10,8 @@
     <img src="{{ $artist->image }}">
     <ul>
         @foreach ($albums as $album)
-            <li> - {{ $album->name }} </li>
+            <li> <a href="{{ route('albums-show', ['id' => $album->id]) }}">
+                    {{ $album->name }} </a> </li>
         @endforeach
     </ul>
 @endsection

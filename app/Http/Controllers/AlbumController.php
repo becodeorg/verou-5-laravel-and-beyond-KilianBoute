@@ -13,4 +13,12 @@ class AlbumController extends Controller
         $albums = Album::all();
         return view("albums.index", ['albums' => $albums]);
     }
+
+    public function show($id)
+    {
+        $album = Album::find($id);
+        //  $album = Album::with('artist')->find($id);
+        $artist = $album->artist;
+        return view('albums.show', ['album' => $album, 'artist' => $artist]);
+    }
 }
