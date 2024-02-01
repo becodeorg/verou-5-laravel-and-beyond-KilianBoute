@@ -13,7 +13,6 @@
                 <h4>By: {{ $album->artist->name }}</h4>
                 <p>{{ $album->description }} </p>
                 <img src="{{ $album->image }}">
-
             </li>
         @endforeach
     </ul>

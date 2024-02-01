@@ -9,9 +9,7 @@
     <ul>
         @foreach ($artists as $artist)
             <li>
-                <h3>{{ $artist->name }}</h3>
-                <p>{{ $artist->description }} </p>
-                <img src="{{ $artist->image }}">
+                <h3><a href={{ route('artists-show', ['id' => $artist->id]) }}>{{ $artist->name }}</a></h3>
             </li>
         @endforeach
     </ul>

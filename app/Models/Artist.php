@@ -13,4 +13,9 @@ class Artist extends Model
         'description',
         'image'
     ];
+
+    public function albums()
+    {
+        return $this->hasMany(Album::class);
+    }
 }

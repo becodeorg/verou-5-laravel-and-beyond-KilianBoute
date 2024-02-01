@@ -21,4 +21,5 @@ Route::get('/', function () {
 });
 
 Route::get('/artists', [ArtistController::class, 'index'])->name('artists-index');
+Route::get('/artists/{id}', [ArtistController::class, 'show'])->name('artists-show');
 Route::get('/albums', [AlbumController::class, 'index'])->name('albums-index');
