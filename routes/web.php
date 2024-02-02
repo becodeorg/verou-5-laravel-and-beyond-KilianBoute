@@ -31,7 +31,8 @@ Route::get('/albums/{id}', [AlbumController::class, 'show'])->name('albums-show'
 Route::get('/register', [RegisterController::class, 'create'])->name('register-create');
 Route::post('/register', [RegisterController::class, 'store'])->name('register-store');
 
-Route::get('/login', [LoginController::class, 'show'])->name('login-show');
+Route::get('/login', [LoginController::class, 'index'])->name('login-show');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
 
 Route::get('/user/{id}', [UserController::class, ''])->name('user-show');
