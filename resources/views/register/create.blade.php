@@ -20,8 +20,9 @@
             <label for="password"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
-            <label for="repeat_password"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="repeat_password" id="repeat_password" required>
+            <label for="password_confirmation"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="password_confirmation" id="password_confirmation"
+                required>
             <hr>
 
             <button type="submit" class="registerbtn">Register</button>

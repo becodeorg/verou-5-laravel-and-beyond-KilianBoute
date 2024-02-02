@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +30,8 @@ Route::get('/albums/{id}', [AlbumController::class, 'show'])->name('albums-show'
 
 Route::get('/register', [RegisterController::class, 'create'])->name('register-create');
 Route::post('/register', [RegisterController::class, 'store'])->name('register-store');
+
+Route::get('/login', [LoginController::class, 'show'])->name('login-show');
+Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
+
+Route::get('/user/{id}', [UserController::class, ''])->name('user-show');
