@@ -24,7 +24,9 @@ class LoginController extends Controller
             return redirect("/");
         }
 
-        return back();
+        return back()->withErrors([
+            'loginError' => 'Invalid login credentials.',
+        ]);
     }
 
     public function destroy()
