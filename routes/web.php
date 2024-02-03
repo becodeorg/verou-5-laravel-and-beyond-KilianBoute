@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\FavoriteAlbumController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -27,6 +28,8 @@ Route::get('/artists/{id}', [ArtistController::class, 'show'])->name('artists-sh
 
 Route::get('/albums', [AlbumController::class, 'index'])->name('albums-index');
 Route::get('/albums/{id}', [AlbumController::class, 'show'])->name('albums-show');
+Route::post('/albums/{album_id}/favorite', [AlbumController::class, 'favorite'])->middleware('auth')->name('favorites-add');
+Route::delete('/albums/{album_id}/unfavorite', [AlbumController::class, 'destroy'])->middleware('auth')->name('favorites-destroy');
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register-create');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register-store');
@@ -35,4 +38,4 @@ Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->na
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest')->name('login');
 Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');
 
-Route::get('/user/{id}', [UserController::class, ''])->name('user-show');
+Route::get('/user/{id}', [UserController::class, 'show'])->name('user-show');

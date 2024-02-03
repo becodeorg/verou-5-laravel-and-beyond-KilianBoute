@@ -25,6 +25,12 @@ class Album extends Model
         return $this->belongsTo(Genre::class);
     }
 
+    public function favorites()
+    {
+        return $this->hasMany(FavoriteAlbum::class);
+    }
+
+
     public function favorite_count()
     {
         return count($this->hasMany(FavoriteAlbum::class)->get());
