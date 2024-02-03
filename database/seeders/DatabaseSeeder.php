@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Artist::factory(20)->create();
 
         \App\Models\Album::factory(20)->create();
+
+        \App\Models\FavoriteAlbum::factory(20)->create();
     }
 }
